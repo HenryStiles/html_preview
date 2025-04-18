@@ -1,0 +1,197 @@
+<style>
+    html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    #map_5e3d0cc8cfd8b2a4c453a52aafbbe508 {
+        position: relative; /* Keep relative or set absolute if needed for specific layout */
+        width: 100.0%;
+        height: 500px; /* Set a specific height for the map container */
+        left: 0.0%;
+        top: 0.0%;
+    }
+    .leaflet-container {
+        font-size: 1rem;
+    }
+    /* Styles for the popups - customize as needed */
+    .leaflet-popup-content {
+        width: 500px !important; /* Increased width */
+        font-size: 16px !important; /* Larger default font size */
+    }
+    .leaflet-popup-content b {
+        font-size: 18px !important; /* Larger font size for the title (bold text) */
+    }
+    .leaflet-popup-content-wrapper {
+        padding: 12px !important; /* Adjusted padding */
+    }
+    .image-citation {
+        font-size: 10px; /* Smaller font for citation */
+        text-align: right;
+        margin-top: 5px;
+        color: #555;
+    }
+</style>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+<script>
+    L_NO_TOUCH = false;
+    L_DISABLE_3D = false;
+</script>
+
+
+<div class="folium-map" id="map_5e3d0cc8cfd8b2a4c453a52aafbbe508" ></div>
+
+<script>
+    // Wait for the DOM to be fully loaded before initializing the map
+    document.addEventListener('DOMContentLoaded', function() {
+        var map_5e3d0cc8cfd8b2a4c453a52aafbbe508 = L.map(
+            "map_5e3d0cc8cfd8b2a4c453a52aafbbe508",
+            {
+                center: [39.5501, -103.5],
+                crs: L.CRS.EPSG3857,
+                scrollWheelZoom: false, // Disabled scroll zoom
+                ...{
+                    "zoom": 7,
+                    "zoomControl": true,
+                    "preferCanvas": false,
+                }
+            }
+        );
+
+        var tile_layer_a1391300f78215bbbe9c9616d1fe8177 = L.tileLayer(
+            "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+            {
+                "minZoom": 0,
+                "maxZoom": 19,
+                "maxNativeZoom": 19,
+                "noWrap": false,
+                "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+                "subdomains": "abc",
+                "detectRetina": false,
+                "tms": false,
+                "opacity": 1,
+            }
+        );
+
+        tile_layer_a1391300f78215bbbe9c9616d1fe8177.addTo(map_5e3d0cc8cfd8b2a4c453a52aafbbe508);
+
+        // --- Markers and Popups ---
+        // Remember to update image paths below to their full URLs on your WordPress site!
+
+        // Marker 1: Cedar Point
+        var marker_21eb352024e61f6c429bea9ee6145dfb = L.marker([39.3785, -103.767]).addTo(map_5e3d0cc8cfd8b2a4c453a52aafbbe508);
+        var popup_ba5ad6377df4c5c9943cdd834ceafe0f = L.popup({"maxWidth": "100%"});
+        var html_fc64e94e0b8893fa924665b2e09502d9 = $(`<div id="html_fc64e94e0b8893fa924665b2e09502d9" style="width: 100.0%; height: 100.0%;"><b>Cedar Point </b><br>At 250 MW of energy production, Cedar Point with 139 turbines, sits on around 20,000 acres and provides power to over 80,000 homes. <br><img src="YOUR_IMAGE_URL/Cedar%20Point%20.jpg" style="width:320px;"><div class="image-citation">Google Earth 6/14/2017–newer</div></div>`)[0]; // <<< UPDATE IMAGE URL
+        popup_ba5ad6377df4c5c9943cdd834ceafe0f.setContent(html_fc64e94e0b8893fa924665b2e09502d9);
+        marker_21eb352024e61f6c429bea9ee6145dfb.bindPopup(popup_ba5ad6377df4c5c9943cdd834ceafe0f);
+
+        // Marker 2: Cedar Creek
+        var marker_13b8ec064bd8d934ec093121566da4ae = L.marker([40.87108333333333, -104.09305555555555]).addTo(map_5e3d0cc8cfd8b2a4c453a52aafbbe508);
+        var popup_2e81deb60fb9de3cebbf5a7273340430 = L.popup({"maxWidth": "100%"});
+        var html_91cb484de07385349cfa597d34f0a966 = $(`<div id="html_91cb484de07385349cfa597d34f0a966" style="width: 100.0%; height: 100.0%;"><b>Cedar Creek</b><br>At 551 MW of energy production, Cedar Creek is the second largest wind farm in Colorado with 397 turbines. It sits on around acres and provides power to over 90,000 homes. </div>`)[0];
+        popup_2e81deb60fb9de3cebbf5a7273340430.setContent(html_91cb484de07385349cfa597d34f0a966);
+        marker_13b8ec064bd8d934ec093121566da4ae.bindPopup(popup_2e81deb60fb9de3cebbf5a7273340430);
+
+        // Marker 3: Twin Buttes
+        var marker_455445f5f968dfebb8fce9bb7a1d53c1 = L.marker([37.67072222222222, -102.84119444444444]).addTo(map_5e3d0cc8cfd8b2a4c453a52aafbbe508);
+        var popup_52d532edb04d5ff55113fbc5de9dee48 = L.popup({"maxWidth": "100%"});
+        var html_419787f136d4a15c108fd5c6119563e0 = $(`<div id="html_419787f136d4a15c108fd5c6119563e0" style="width: 100.0%; height: 100.0%;"><b>Twin Buttes </b><br>At 75 MW of energy production, Twin Buttes with 50 turbines spans over 9,000 acres, but uses only around 2% of the land and produces enough power for over 22,000 homes.</div>`)[0];
+        popup_52d532edb04d5ff55113fbc5de9dee48.setContent(html_419787f136d4a15c108fd5c6119563e0);
+        marker_455445f5f968dfebb8fce9bb7a1d53c1.bindPopup(popup_52d532edb04d5ff55113fbc5de9dee48);
+
+        // Marker 4: Colorado Highlands Farm I & II
+        var marker_f8eb002b1dab54b4d1da101320563103 = L.marker([40.7457, -102.752]).addTo(map_5e3d0cc8cfd8b2a4c453a52aafbbe508);
+        var popup_87a83b7c84a29c01f27414a113daf2b5 = L.popup({"maxWidth": "100%"});
+        var html_12ca72a981a27f10ad689c8e7f2fc26b = $(`<div id="html_12ca72a981a27f10ad689c8e7f2fc26b" style="width: 100.0%; height: 100.0%;"><b>Colorado Highlands Farm I & II</b><br>This first site is made up of 42 turbines that can generate up to 1.6 MW of energy each, together the sites produce 91 MW of energy, enough to power around 27,000 homes. <br><img src="YOUR_IMAGE_URL/Colorado%20Highlands%20Farm%20I%20%26%20II.jpg" style="width:320px;"><div class="image-citation">© 2025 Google November 2021</div></div>`)[0]; // <<< UPDATE IMAGE URL
+        popup_87a83b7c84a29c01f27414a113daf2b5.setContent(html_12ca72a981a27f104a113daf2b5ad689c8e7f2fc26b);
+        marker_f8eb002b1dab54b4d1da101320563103.bindPopup(popup_87a83b7c84a29c01f27414a113daf2b5);
+
+        // Marker 5: Limon Wind Energy Center
+        var marker_f3c4d2312562d8d7bc371be8a73b77db = L.marker([39.37444444444444, -103.66833333333334]).addTo(map_5e3d0cc8cfd8b2a4c453a52aafbbe508);
+        var popup_d1a697a799fe3664604df8f162d19343 = L.popup({"maxWidth": "100%"});
+        var html_6356da6f3130d507c25556556d342b8d = $(`<div id="html_6356da6f3130d507c25556556d342b8d" style="width: 100.0%; height: 100.0%;"><b>Limon Wind Energy Center</b><br>At 600 MW of energy production Limon Winds is the largest farm in Colorado. The farm consists of 368 turbines that stretch across 104,000 acres, which create enough renewable energy to power 114,000 homes. <br><img src="YOUR_IMAGE_URL/Limon%20Wind%20Energy%20Center.jpg" style="width:320px;"><div class="image-citation">Airbus 10/27/2024</div></div>`)[0]; // <<< UPDATE IMAGE URL
+        popup_d1a697a799fe3664604df8f162d19343.setContent(html_6356da6f3130d507c25556556d342b8d);
+        marker_f3c4d2312562d8d7bc371be8a73b77db.bindPopup(popup_d1a697a799fe3664604df8f162d19343);
+
+        // Marker 6: Niyol Wind
+        var marker_aeb4d91e721e28f835c192c82bd91baf = L.marker([40.61933333333334, -102.97011111111111]).addTo(map_5e3d0cc8cfd8b2a4c453a52aafbbe508);
+        var popup_e41aca253197175e0c1ea9331302ca3c = L.popup({"maxWidth": "100%"});
+        var html_d7744ef6ec7bf872f7fff713b320823f = $(`<div id="html_d7744ef6ec7bf872f7fff713b320823f" style="width: 100.0%; height: 100.0%;"><b>Niyol Wind </b><br>Niyol produces over 200 MW of renewable energy. It consists of 74 turbines, which stretch over about 39,300 acres in Logan County. Niyol became operational in 2021.<br><img src="YOUR_IMAGE_URL/Niyol%20Wind%20.jpg" style="width:320px;"><div class="image-citation">Airbus 10/2/2023–10/15/2023</div></div>`)[0]; // <<< UPDATE IMAGE URL
+        popup_e41aca253197175e0c1ea9331302ca3c.setContent(html_d7744ef6ec7bf872f7fff713b320823f);
+        marker_aeb4d91e721e28f835c192c82bd91baf.bindPopup(popup_e41aca253197175e0c1ea9331302ca3c);
+
+        // Marker 7: Crossing Trains Wind
+        var marker_04e0df8c09d2fd5463440c7e34467e06 = L.marker([39.0475, -102.86638888888888]).addTo(map_5e3d0cc8cfd8b2a4c453a52aafbbe508);
+        var popup_d26682db0e8349f559fa3425e4105c21 = L.popup({"maxWidth": "100%"});
+        var html_efef6df541c9b3163da96332daa013a9 = $(`<div id="html_efef6df541c9b3163da96332daa013a9" style="width: 100.0%; height: 100.0%;"><b>Crossing Trains Wind</b><br>Generating 104 MW of energy, Crossing Trains consists of 25 turbines that generate enough energy to power over 38,000 homes. </div>`)[0];
+        popup_d26682db0e8349f559fa3425e4105c21.setContent(html_efef6df541c9b3163da96332daa013a9);
+        marker_04e0df8c09d2fd5463440c7e34467e06.bindPopup(popup_d26682db0e8349f559fa3425e4105c21);
+
+        // Marker 8: Carousel Wind
+        var marker_8f80997734d8d75bb7b503005356a432 = L.marker([39.3384, -102.1501]).addTo(map_5e3d0cc8cfd8b2a4c453a52aafbbe508);
+        var popup_f8a262d15a65c73baa393ab96896e784 = L.popup({"maxWidth": "100%"});
+        var html_d1aa7cbd17e6e2ff5df5f99a09db9e22 = $(`<div id="html_d1aa7cbd17e6e2ff5df5f99a09db9e22" style="width: 100.0%; height: 100.0%;"><b>Carousel Wind </b><br>With a capacity to generate 150 MW of renewable energy Carousel Wind sits on 6,640 acres and consists of 88 turbines which generate enough power for up to 27,000 homes. <div class="image-citation">© 2025 Google September 2023</div></div>`)[0]; // <<< UPDATE IMAGE URL
+        popup_f8a262d15a65c73baa393ab96896e784.setContent(html_d1aa7cbd17e6e2ff5df5f99a09db9e22);
+        marker_8f80997734d8d75bb7b503005356a432.bindPopup(popup_f8a262d15a65c73baa393ab96896e784);
+
+        // Marker 9: Peetz Table Wind I & II
+        var marker_f67114922971bac587efa42e46448308 = L.marker([40.99166666666667, -103.39666666666668]).addTo(map_5e3d0cc8cfd8b2a4c453a52aafbbe508);
+        var popup_ddccad833e07cf634dd5aa0315b63fee = L.popup({"maxWidth": "100%"});
+        var html_a788a746a5f92eaa1886628d0a73801e = $(`<div id="html_a788a746a5f92eaa1886628d0a73801e" style="width: 100.0%; height: 100.0%;"><b>Peetz Table Wind I & II</b><br>With a capacity to generate 430 MW of renewable energy Peetz Table Wind consists of 299 turbines which generate enough power for around 86,000 homes. <br><img src="YOUR_IMAGE_URL/Peetz%20Table%20Wind%20I%20%26%20II.jpg" style="width:320px;"><div class="image-citation">Airbus 9/9/2023–7/4/2024</div></div>`)[0]; // <<< UPDATE IMAGE URL
+        popup_ddccad833e07cf634dd5aa0315b63fee.setContent(html_a788a746a5f92eaa1886628d0a73801e);
+        marker_f67114922971bac587efa42e46448308.bindPopup(popup_ddccad833e07cf634dd5aa0315b63fee);
+
+        // Marker 10: Cheyenne Ridge
+        var marker_f935527441b67f13d1650d7391bfd4d0 = L.marker([39.0375, -102.33694444444444]).addTo(map_5e3d0cc8cfd8b2a4c453a52aafbbe508);
+        var popup_2ca610121131ecb727a5e477044eb2de = L.popup({"maxWidth": "100%"});
+        var html_c7e394cedf9c1d05b8c9262be8650aba = $(`<div id="html_c7e394cedf9c1d05b8c9262be8650aba" style="width: 100.0%; height: 100.0%;"><b>Cheyenne Ridge </b><br>With a capacity to generate 500 MW of renewable energy Cheyenne Ridge Wind consists of 229 turbines, generating enough energy to power 270,000 homes </div>`)[0];
+        popup_2ca610121131ecb727a5e477044eb2de.setContent(html_c7e394cedf9c1d05b8c9262be8650aba);
+        marker_f935527441b67f13d1650d7391bfd4d0.bindPopup(popup_2ca610121131ecb727a5e477044eb2de);
+
+        // Marker 11: Busch Ranch I & II
+        var marker_4f95becae71242272d443d874292ca4b = L.marker([37.803888888888885, -104.49333333333334]).addTo(map_5e3d0cc8cfd8b2a4c453a52aafbbe508);
+        var popup_fc2fa71b6f618e1d8bbd6d9440bc783f = L.popup({"maxWidth": "100%"});
+        var html_a56502d177747115d1077bbc0bf90dd9 = $(`<div id="html_a56502d177747115d1077bbc0bf90dd9" style="width: 100.0%; height: 100.0%;"><b>Busch Ranch I & II </b><br>With a capacity to generate 90 MW of renewable energy Busch Ranch I & II consists of 33 turbines, generating enough power for around 96,000 homes <br><img src="YOUR_IMAGE_URL/Busch%20Ranch%20I%20%26%20II%20.jpg" style="width:320px;"><div class="image-citation">© 2025 Google October 2022</div></div>`)[0]; // <<< UPDATE IMAGE URL
+        popup_fc2fa71b6f618e1d8bbd6d9440bc783f.setContent(html_a56502d177747115d1077bbc0bf90dd9);
+        marker_4f95becae71242272d443d874292ca4b.bindPopup(popup_fc2fa71b6f618e1d8bbd6d9440bc783f);
+
+        // Marker 12: Peak View
+        var marker_4da7630f2c8462af5e53762227141080 = L.marker([37.671277777777775, -104.51694444444445]).addTo(map_5e3d0cc8cfd8b2a4c453a52aafbbe508);
+        var popup_698c4d70ca9bac2d5b13b6f0b8076b68 = L.popup({"maxWidth": "100%"});
+        var html_ef3fad3b9fa6f8ea756e8008995648b0 = $(`<div id="html_ef3fad3b9fa6f8ea756e8008995648b0" style="width: 100.0%; height: 100.0%;"><b>Peak View </b><br>With a capacity to generate 58 MW of renewable energy Peak View Winds consists of 34 turbines, generating enough power for around 94,000 homes.<br><img src="YOUR_IMAGE_URL/Peak%20View%20.jpg" style="width:320px;"><div class="image-citation">© 2025 Google October 2022</div></div>`)[0]; // <<< UPDATE IMAGE URL
+        popup_698c4d70ca9bac2d5b13b6f0b8076b68.setContent(html_ef3fad3b9fa6f8ea756e8008995648b0);
+        marker_4da7630f2c8462af5e53762227141080.bindPopup(popup_698c4d70ca9bac2d5b13b6f0b8076b68);
+
+        // Marker 13: Bronco Plains Wind Farm I & II
+        var marker_e2cd0fa205cab99ae645b8dbddd39c57 = L.marker([39.04427777777778, -102.93966666666667]).addTo(map_5e3d0cc8cfd8b2a4c453a52aafbbe508);
+        var popup_0932625cbdabc7f3325de8fe1263b28b = L.popup({"maxWidth": "100%"});
+        var html_685663924d6926461d0045e959a17987 = $(`<div id="html_685663924d6926461d0045e959a17987" style="width: 100.0%; height: 100.0%;"><b>Bronco Plains Wind Farm I & II</b><br>With a capacity to generate 300 MW of renewable energy Bronco Plains Wind Farm consists of 108 turbines, generating enough power for around 40,000 homes. </div>`)[0];
+        popup_0932625cbdabc7f3325de8fe1263b28b.setContent(html_685663924d6926461d0045e959a17987);
+        marker_e2cd0fa205cab99ae645b8dbddd39c57.bindPopup(popup_0932625cbdabc7f3325de8fe1263b28b);
+
+        // Marker 14: Rush Creek
+        var marker_1dd5ae447c7c4e7078d4a483d7d6fd09 = L.marker([39.17005555555556, -103.83855555555554]).addTo(map_5e3d0cc8cfd8b2a4c453a52aafbbe508);
+        var popup_56683e080aa873f72a2aaa833afb9170 = L.popup({"maxWidth": "100%"});
+        var html_16d77c24489e7d0438f7cd49502fbfb1 = $(`<div id="html_16d77c24489e7d0438f7cd49502fbfb1" style="width: 100.0%; height: 100.0%;"><b>Rush Creek</b><br>With a capacity to generate 600 MW of renewable energy Rush Creek Wind consists of 300 turbines, generating enough power for around 325,000 homes. <br><img src="YOUR_IMAGE_URL/Rush%20Creek.jpg" style="width:320px;"><div class="image-citation">© 2025 Google May 2024</div></div>`)[0]; // <<< UPDATE IMAGE URL
+        popup_56683e080aa873f72a2aaa833afb9170.setContent(html_16d77c24489e7d0438f7cd49502fbfb1);
+        marker_1dd5ae447c7c4e7078d4a483d7d6fd09.bindPopup(popup_56683e080aa873f72a2aaa833afb9170);
+
+        // --- End of Markers and Popups ---
+
+        // Optional: Adjust map height if needed - this is also in the <style>
+        // map_5e3d0cc8cfd8b2a4c453a52aafbbe508.getSize().y;
+
+    }); // End of DOMContentLoaded
+</script>
