@@ -5,16 +5,75 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     
     <style>
+    /* General styles for popup content */
     .leaflet-popup-content {
-        max-width: 500px !important; /* Increased width */
-        font-size: 16px !important; /* Larger default font size */
+        font-size: 16px !important;
+        width: auto; /* Allows shrinking and works with min/max */
+        box-sizing: border-box;
+        /* *** FIX: Override Leaflet's default margins (20px/24px) on THIS element *** */
+        margin: 0 !important; /* Set all margins to 0 */
     }
-    .leaflet-popup-content b {
-        font-size: 18px !important; /* Larger font size for the title (bold text) */
-    }
+
+    /* General styles for popup wrapper */
     .leaflet-popup-content-wrapper {
-        padding: 12px !important; /* Adjusted padding */
+        /* *** FIX: Ensure your desired padding is applied, overriding Leaflet's 1px default *** */
+        padding: 12px !important; /* Use !important to make sure it overrides leaflet.css:477 */
+
+        /* You might want to keep these default Leaflet styles for the wrapper: */
+        background: white;
+        color: #333;
+        box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+        border-radius: 12px;
+        text-align: left; /* Matches leaflet.css */
     }
+
+    /* --- Desktop Specific Adjustments (Min-width and Max-width) --- */
+    @media (min-width: 768px) { /* Target screens 768px and wider */
+        .leaflet-popup-content {
+            /* Now that margins/padding are corrected, use min-width to force expansion on desktop */
+            min-width: 300px !important; /* Adjust this value (e.g., 400px, 500px) until it looks good */
+
+            /* Set the maximum width for desktop */
+            max-width: 600px !important; /* Adjust the max cap as needed */
+
+            width: auto !important; /* Ensure min/max are respected */
+        }
+        /* Wrapper padding is handled by the general .leaflet-popup-content-wrapper rule */
+    }
+
+    /* --- Mobile Specific Adjustments (Keeping previous adjustments for smaller screens) --- */
+    @media (max-width: 767.98px) {
+        .leaflet-popup-content {
+            max-width: 95% !important; /* Percentage max-width for mobile relative to available space */
+            min-width: auto !important; /* Don't force a min-width on mobile */
+            /* font-size: 14px !important; /* Optional: reduce font size on mobile if needed */
+        }
+
+        .leaflet-popup-content-wrapper {
+            padding: 8px !important; /* Reduce padding on small screens to save space */
+        }
+        /* Also ensure images are responsive on mobile */
+        .leaflet-popup-content img {
+            max-width: 100% !important;
+            height: auto !important;
+        }
+    }
+
+    /* Ensure Images are Responsive Within Popups - important general rule */
+    .leaflet-popup-content img {
+        max-width: 100% !important;
+        height: auto !important;
+        /* Important: Ideally remove the inline width="320px" style from your HTML strings! */
+    }
+
+    /* Style for the citation text */
+    .image-citation {
+        font-size: 10px;
+        text-align: right;
+        margin-top: 5px;
+        color: #555;
+    }
+
     </style>
     
     
